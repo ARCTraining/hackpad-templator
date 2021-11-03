@@ -16,7 +16,7 @@ jobs:
       uses: tj-actions/branch-names@v5
     
     - name: set up split function
-    - uses: jungwinter/split@v2
+      uses: jungwinter/split@v2
       id: split
       with:
         msg: ${{ steps.branch-name.outputs.current_branch}}
