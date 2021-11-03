@@ -2,9 +2,6 @@ name: Create research computing training hackmd page
 
 on:
   push:
-    branches:
-      # trigger on all branches
-      - '*'
     branches-ignore:
       # don't trigger on main
       - '!main' 
