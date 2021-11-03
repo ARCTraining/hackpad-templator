@@ -27,6 +27,9 @@ jobs:
     
     - name: Setup node
       uses: actions/setup-node@v2
+
+    - name: install hackmd-cli
+      shell: bash -l {0}
       run: npm install -g @hackmd/hackmd-cli
 
     - name: Setup nginx
