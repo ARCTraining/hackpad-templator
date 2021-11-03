@@ -1,0 +1,53 @@
+name: Create research computing training hackmd page
+
+on:
+  push:
+    branches:
+      # don't trigger on main
+      - '!main' 
+      # trigger on all branches
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5
+    
+    - uses: jungwinter/split@v2
+      id: split
+      with:
+        msg: ${{ steps.branch-name.outputs.current_branch}}
+        separator: "-"
+
+    - name: Setup node and install hackmd-cli
+    - steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+      - run: npm install -g @hackmd/hackmd-cli
+
+    - name: Setup nginx
+      uses: cuchi/jinja2-action@v1.2.0
+      with:
+        template: templates/${{ steps.split.outputs._0}}.conf.j2
+        output_file: ${{ steps.branch-name.outputs.current_branch }}.md
+        data_file: config.json
+        data_format: json # Will try to guess from the extension instead (unnecessary in this case)
+
+    - name: login to hackmd
+      shell: bash -l {0}
+      run: |
+        hackmd-cli login
+
+    - name: export markdown file to hackmd
+      shell: bash -l {0}
+      run: |
+        hackmd-cli import ${{ steps.branch-name.outputs.current_branch }}.md
+
+    - name: logout to hackmd
+      shell: bash -l {0}
+      run: |
+        hackmd-cli logout
