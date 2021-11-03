@@ -35,7 +35,7 @@ jobs:
     - name: generate templates via jinja2
       uses: cuchi/jinja2-action@v1.2.0
       with:
-        template: templates/${{ steps.split.outputs._0}}.conf.j2
+        template: templates/${{ steps.split.outputs._0}}.md.j2
         output_file: ${{ steps.branch-name.outputs.current_branch }}.md
         data_file: config.yaml
         data_format: yaml # Will try to guess from the extension instead (unnecessary in this case)
