@@ -43,8 +43,8 @@ jobs:
     - name: login to hackmd
       shell: bash -l {0}
       env:
-        - HMD_CLI_ID: ${{ secrets.HMD_CLI_ID }}
-        - HMD_CLI_PASSWORD: ${{ secrets.HMD_CLI_PASSWORD }}
+        HMD_CLI_ID: ${{ secrets.HMD_CLI_ID }}
+        HMD_CLI_PASSWORD: ${{ secrets.HMD_CLI_PASSWORD }}
       run: |
         hackmd-cli login
 
