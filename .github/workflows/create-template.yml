@@ -4,8 +4,8 @@ on:
   push:
     branches-ignore:
       # don't trigger on main
-      - '!main' 
-      - '!master'
+      - 'main' 
+      - 'master'
 
 jobs:
   build:
