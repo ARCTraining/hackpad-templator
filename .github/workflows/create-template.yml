@@ -3,27 +3,29 @@ name: Create research computing training hackmd page
 on:
   push:
     branches:
-      # don't trigger on main
-      - '!main' 
       # trigger on all branches
       - '*'
+    branches-ignore:
+      # don't trigger on main
+      - '!main' 
+      - '!master'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    steps:
     - name: Get branch name
         id: branch-name
         uses: tj-actions/branch-names@v5
     
+    - name: set up split function
     - uses: jungwinter/split@v2
       id: split
       with:
         msg: ${{ steps.branch-name.outputs.current_branch}}
         separator: "-"
-
+      
     - name: Setup node and install hackmd-cli
-    - steps:
       - uses: actions/checkout@v2
       - name: Setup node
         uses: actions/setup-node@v2
