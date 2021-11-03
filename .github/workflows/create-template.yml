@@ -37,8 +37,8 @@ jobs:
       with:
         template: templates/${{ steps.split.outputs._0}}.conf.j2
         output_file: ${{ steps.branch-name.outputs.current_branch }}.md
-        data_file: config.json
-        data_format: json # Will try to guess from the extension instead (unnecessary in this case)
+        data_file: config.yml
+        data_format: yml # Will try to guess from the extension instead (unnecessary in this case)
 
     - name: login to hackmd
       shell: bash -l {0}
