@@ -32,13 +32,13 @@ jobs:
       shell: bash -l {0}
       run: npm install -g @hackmd/hackmd-cli
 
-    - name: Setup nginx
+    - name: generate templates via jinja2
       uses: cuchi/jinja2-action@v1.2.0
       with:
         template: templates/${{ steps.split.outputs._0}}.conf.j2
         output_file: ${{ steps.branch-name.outputs.current_branch }}.md
-        data_file: config.yml
-        data_format: yml # Will try to guess from the extension instead (unnecessary in this case)
+        data_file: config.yaml
+        data_format: yaml # Will try to guess from the extension instead (unnecessary in this case)
 
     - name: login to hackmd
       shell: bash -l {0}
