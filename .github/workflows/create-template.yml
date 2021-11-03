@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get branch name
-        id: branch-name
-        uses: tj-actions/branch-names@v5
+      id: branch-name
+      uses: tj-actions/branch-names@v5
     
     - name: set up split function
     - uses: jungwinter/split@v2
@@ -26,10 +26,11 @@ jobs:
         separator: "-"
       
     - name: Setup node and install hackmd-cli
-      - uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v2
-      - run: npm install -g @hackmd/hackmd-cli
+      uses: actions/checkout@v2
+    
+    - name: Setup node
+      uses: actions/setup-node@v2
+      run: npm install -g @hackmd/hackmd-cli
 
     - name: Setup nginx
       uses: cuchi/jinja2-action@v1.2.0
