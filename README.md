@@ -40,7 +40,7 @@ $ git checkout -b hpc0-2021-11
 Each template expects a `config.yml` file to be committed within the branch to generate the hackpad. These just have to be simple
 yml documents that specify the variables that jinja2 will fill in.
 
-### HPC0
+### HPC0 & HPC1
 
 Expected yml file:
 
