@@ -59,7 +59,7 @@ jobs:
         with:
           github-token: ${{ github.token }} # this will use the runner's token.
           ms-teams-webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-          notification-summary: "Hackpad created for [${{ steps.split.outputs._0 }}](${{ steps.hackmd-create.outputs.hackmd_link }})! 🎉"
+          notification-summary: Hackpad created for <a href="${{ steps.hackmd-create.outputs.hackmd_link }}">${{ steps.split.outputs._0 }}</a>! 🎉
           notification-color: 28a745
 
       - name: logout to hackmd
