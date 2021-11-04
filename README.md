@@ -45,6 +45,6 @@ yml documents that specify the variables that jinja2 will fill in.
 Expected yml file:
 
 ```yml
-date: "2021-11"
-morning: True
+date: "2021-11" # specify the date to be included in the hackmd heading
+morning: True # specify if the session is morning or not to control generated agenda timings
 ```
