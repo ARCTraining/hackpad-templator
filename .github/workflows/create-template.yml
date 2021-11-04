@@ -4,56 +4,65 @@ on:
   push:
     branches-ignore:
       # don't trigger on main
-      - 'main' 
-      - 'master'
+      - "main"
+      - "master"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Get branch name
-      id: branch-name
-      uses: tj-actions/branch-names@v5
-    
-    - name: set up split function
-      uses: rishabhgupta/split-by@v1
-      id: split
-      with:
-        string: ${{ steps.branch-name.outputs.current_branch }}
-        split-by: "-"
-      
-    - name: Setup node and install hackmd-cli
-      uses: actions/checkout@v2
-    
-    - name: Setup node
-      uses: actions/setup-node@v2
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5
 
-    - name: install hackmd-cli
-      shell: bash -l {0}
-      run: npm install -g @hackmd/hackmd-cli
+      - name: set up split function
+        uses: rishabhgupta/split-by@v1
+        id: split
+        with:
+          string: ${{ steps.branch-name.outputs.current_branch }}
+          split-by: "-"
 
-    - name: generate templates via jinja2
-      uses: cuchi/jinja2-action@v1.2.0
-      with:
-        template: templates/${{ steps.split.outputs._0}}.md.j2
-        output_file: ${{ steps.branch-name.outputs.current_branch }}.md
-        data_file: config.yaml
-        data_format: yaml # Will try to guess from the extension instead (unnecessary in this case)
+      - name: Setup node and install hackmd-cli
+        uses: actions/checkout@v2
 
-    - name: login to hackmd
-      shell: bash -l {0}
-      env:
-        HMD_CLI_ID: ${{ secrets.HMD_CLI_ID }}
-        HMD_CLI_PASSWORD: ${{ secrets.HMD_CLI_PASSWORD }}
-      run: |
-        hackmd-cli login
+      - name: Setup node
+        uses: actions/setup-node@v2
 
-    - name: export markdown file to hackmd
-      shell: bash -l {0}
-      run: |
-        hackmd-cli import ${{ steps.branch-name.outputs.current_branch }}.md
+      - name: install hackmd-cli
+        shell: bash -l {0}
+        run: npm install -g @hackmd/hackmd-cli
 
-    - name: logout to hackmd
-      shell: bash -l {0}
-      run: |
-        hackmd-cli logout
+      - name: generate templates via jinja2
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: templates/${{ steps.split.outputs._0}}.md.j2
+          output_file: ${{ steps.branch-name.outputs.current_branch }}.md
+          data_file: config.yaml
+          data_format: yaml # Will try to guess from the extension instead (unnecessary in this case)
+
+      - name: login to hackmd
+        shell: bash -l {0}
+        env:
+          HMD_CLI_ID: ${{ secrets.HMD_CLI_ID }}
+          HMD_CLI_PASSWORD: ${{ secrets.HMD_CLI_PASSWORD }}
+        run: |
+          hackmd-cli login
+
+      - name: export markdown file to hackmd
+        shell: bash -l {0}
+        id: hackmd-create
+        run: |
+          hackmd-cli import ${{ steps.branch-name.outputs.current_branch }}.md
+
+      - name: Notify teams channel of created hackpad url
+        uses: jdcargile/ms-teams-notification@v1.3
+        with:
+          github-token: ${{ github.token }} # this will use the runner's token.
+          ms-teams-webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+          notification-summary: ${{ hackmd-create }}
+          notification-color: 28a745
+
+      - name: logout to hackmd
+        shell: bash -l {0}
+        run: |
+          hackmd-cli logout
