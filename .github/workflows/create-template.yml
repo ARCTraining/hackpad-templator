@@ -52,26 +52,19 @@ jobs:
         shell: bash -l {0}
         id: hackmd-create
         run: |
-          echo "::set-output name=hackmd_link::$(hackmd-cli import ${{ steps.branch-name.outputs.current_branch }}.md)"
-
-      - name: set up split function
-        uses: rishabhgupta/split-by@v1
-        id: hackmd-split
-        with:
-          string: ${{ steps.hackmd-create.outputs.hackmd_link }}
-          split-by: " "
+          echo "::set-output name=hackmd_link::$(hackmd-cli import ${{ steps.branch-name.outputs.current_branch }}.md | grep -oP  'http.?://\S+')"
 
       - name: echo split
         shell: bash -l {0}
         run: |
-          echo "${{ steps.hackmd-split.outputs_4 }}"
+          echo "${{ steps.hackmd-create.outputs.hackmd_link }}"
 
       - name: Notify teams channel of created hackpad url
         uses: jdcargile/ms-teams-notification@v1.3
         with:
           github-token: ${{ github.token }} # this will use the runner's token.
           ms-teams-webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-          notification-summary: Hackpad for ${{ steps.branch_name.outputs.current_branch }} created at ${{ steps.hackmd-split.outputs._5 }}! 🎉
+          notification-summary: "Hackpad for ${{ steps.branch_name.outputs.current_branch }} created at ${{ steps.hackmd-create.outputs.hackmd_link }}!" 🎉
           notification-color: 28a745
 
       - name: logout to hackmd
