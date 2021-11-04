@@ -52,14 +52,14 @@ jobs:
         shell: bash -l {0}
         id: hackmd-create
         run: |
-          hackmd-cli import ${{ steps.branch-name.outputs.current_branch }}.md
+          echo "::set-output name=hackmd_link::$(hackmd-cli import ${{ steps.branch-name.outputs.current_branch }}.md)"
 
       - name: Notify teams channel of created hackpad url
         uses: jdcargile/ms-teams-notification@v1.3
         with:
           github-token: ${{ github.token }} # this will use the runner's token.
           ms-teams-webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-          notification-summary: ${{ steps.hackmd-create.outputs[0] }}
+          notification-summary: ${{ steps.hackmd-create.outputs.hackmd_link }}
           notification-color: 28a745
 
       - name: logout to hackmd
