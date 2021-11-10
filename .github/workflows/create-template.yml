@@ -6,6 +6,7 @@ on:
       # don't trigger on main
       - "main"
       - "master"
+      - "dev*"
 
 jobs:
   build:
