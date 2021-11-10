@@ -1,0 +1,124 @@
+# {{ date }} <br> SWD2: Version Control with Git/ GitHub
+
+Welcome to the hack pad for SWD2 course from Research Computing at the University of Leeds!
+
+You can edit this document using [Markdown syntax](https://guides.github.com/features/mastering-markdown/).
+
+## Contents
+
+1. [Links to resource](#Links-to-resources)
+2. [Agenda](#Agenda)
+3. [Pre workshop prep](#Pre-workshop-prep)
+4. [What's your name and where do you come from?](#What’s-your-name-and-where-do-you-come-from)
+5. [Code along](#Code-along)
+
+## Links to resources
+
+- **Contact Research Computing** - https://bit.ly/arc-help
+- **Request HPC account** - https://leeds.service-now.com/it?id=sc_cat_item&sys_id=4c002dd70f235f00a82247ece1050ebc
+- **Presentation for today** - https://arctraining.github.io/swd2_git/
+- **GitHub** - https://github.com/
+- **Using GitHub via the web interface** - https://github.com/YaleDHLab/lab-workshops/tree/master/intro-to-git
+
+## Pre workshop prep
+
+This workshop is a hands on workshop so you will be expected to do some typing today!
+
+To help get you up to speed please do the following prep:
+
+1. Register for an account with GitHub (we'd encourage with your University email) via https://github.com/join
+![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/swd2/github-signup.png?token=AE7LNUQPX7BGV4BMHNMXQYDBSTXSU)
+2. Make sure you have access to a terminal/shell with git installed
+    
+    - If you're using a Mac/Linux machine you're all set! (These come with a terminal and git installed already)
+    
+    - If you're using Windows you'll need to do the following:
+        1. Install Anaconda, [click here to download the installer](https://repo.anaconda.com/archive/Anaconda3-2020.11-Windows-x86_64.exe) (watch this video guide - https://mymedia.leeds.ac.uk/Mediasite/Play/09302f838ced49af803054090c449b331d?autoStart=false)
+        2. Once installed open the Anaconda prompt
+        ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/swd2/install-git-bash1.png?token=AE7LNUR7U6FTQ7KNBB4ASD3BSTXUE)
+        3. From the Anaconda prompt install git-bash using the command `conda install -c conda-forge git-bash==2.22.0` type `y` when prompted
+        ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/swd2/install-git-bash2.png?token=AE7LNUTP4AF5FZE7D6ZBQY3BSTXUY)
+        4. Once installed successfully, type `git-bash` into Anaconda prompt
+        ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/swd2/install-git-bash3.png?token=AE7LNUWWZOG2LRW6SXVMU3TBSTXVE)
+            A new terminal should then appear 
+        ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/swd2/install-git-bash4.png?token=AE7LNUQ4INESZJPZBFWKLKLBSTXVU)
+        And you've successfully installed git-bash 🎉
+        5. To make it easier to start in the future pin it to your taskbar
+        ![](https://raw.githubusercontent.com/ARCTraining/hackpad-templator/main/static/swd2/install-git-bash5.png?token=AE7LNUSG3TUTNNQOPJQ6SK3BSTXWE)
+        
+        
+        **You're now all set for SWD2!**
+
+
+{% if morning %}
+## Agenda Day 1
+
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 0900     | Intro, setup, what is version control?     |
+| 0950     | Break                                      |
+| 1000     | Creating a repository, Tracking changes    |
+| 1050     | Break and Answers                          |
+| 1100     | Exploring history, GitHub, collaboration   |
+| 1150     | Questions                                  |
+| 1200     | Close                                      |
+
+## Agenda Day 2
+
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 0900     | Intro, collaborating (cont.), Conflicts    |
+| 0950     | Questions and break                        |
+| 1000     | Conflicts and Branching                    |
+| 1050     | Questions and break                        |
+| 1100     | Open Science, Licensing                    |
+| 1150     | Wrap up and questions                      |
+| 1200     | Close                                      |
+
+{% else %}
+## Agenda Day 1
+
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 1300     | Intro, setup, what is version control?     |
+| 1350     | Break                                      |
+| 1400     | Creating a repository, Tracking changes    |
+| 1450     | Break and Answers                          |
+| 1500     | Exploring history, GitHub, collaboration   |
+| 1550     | Questions                                  |
+| 1600     | Close                                      |
+
+## Agenda Day 2
+
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 1300     | Intro, collaborating (cont.), Conflicts    |
+| 1350     | Questions and break                        |
+| 1400     | Conflicts and Branching                    |
+| 1450     | Questions and break                        |
+| 1500     | Open Science, Licensing                    |
+| 1550     | Wrap up and questions                      |
+| 1600     | Close                                      |
+{% endif %}
+
+## What's your name and where do you come from?
+- Edit the hackpad and add your name!
+
+
+### Code along
+
+
+### Git Config
+
+When we start using git it's helpful to set some defaults using the following commands:
+
+```bash=
+$ git config --global user.name "<your name>"
+$ git config --global user.email "<your email>"
+$ git config --global color.ui "auto"
+$ git config --global init.defaultBranch main
+$ git config --global core.editor "nano -w"
+
+# if on windows
+$ git config --global core.autocrlf true
+```
