@@ -1,0 +1,167 @@
+# {{ date }} <br> SWD1a: Introduction to Python
+
+Welcome to the hack pad for SWD1a course from Research Computing at the University of Leeds!
+
+You can edit this document using [Markdown syntax](https://guides.github.com/features/mastering-markdown/).
+
+## Contents
+
+1. [Links to resource](#Links-to-resources)
+2. [Agenda Day 1](#Agenda-Day-1)
+3. [Agenda Day 2](#Agenda-Day-2)
+4. [Agenda Day 3](#Agenda-Day-3)
+5. [Agenda Day 4](#Agenda-Day-4)
+6. [What's your name and where do you come from?](#What’s-your-name-and-where-do-you-come-from)
+12. [Further reading](#Further-reading)
+13. [Extra code snippets](#Misc-code-snippets)
+14. [Challenges](#Challenges)
+
+## Links to resources
+
+- **Contact Research Computing** - https://bit.ly/arc-help
+- **Workshop Slides** - https://arctraining.github.io/python-2021-04/
+- **Github repository** - https://github.com/ARCTraining/python-2021-04
+- **Research Computing website** - https://arc.leeds.ac.uk/
+
+{% if morning %}
+## Agenda Day 1
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 0900     | Intro, using Google Colab, What is Python? |
+| 0950     | Break                                      |
+| 1000     | Python basics, Handling data               |
+| 1050     | Break                           |
+| 1100     | Python packages and Pandas                 |
+| 1150     | Questions                                  |
+| 1200     | Close                                      |
+
+## Agenda Day 2
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 0900     | Mount google drive onto colab, using pandas     |
+| 0950     | Break                                           |
+| 1000     | Indexing and subsetting, Data types and formats |
+| 1050     | Break                                           |
+| 1100     | Combining dataframes                            |
+| 1150     | Questions                                       |
+| 1200     | Close                                           |
+
+## Agenda Day 3
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 0900     | Indexing and subsetting, Data types and formats |
+| 0950     | Break                                           |
+| 1000     | Merging dataframes                              |
+| 1050     | Break                                           |
+| 1100     | Loops and functions                             |
+| 1150     | Questions                                       |
+| 1200     | Close                                           |
+
+## Agenda Day 4
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 0900     | Finishing off merging, loops and functions      |
+| 0950     | Break                                           |
+| 1000     | loops and functions cont., plotting with plotnine|
+| 1050     | Break                                           |
+| 1100     | Bringing it all together                        |
+| 1150     | Questions                                       |
+| 1200     | Close                                           |
+{% else %}
+
+## Agenda Day 1
+
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 1300     | Intro, using Google Colab, What is Python? |
+| 1350     | Break                                      |
+| 1400     | Python basics, Handling data               |
+| 1450     | Break                           |
+| 1500     | Python packages and Pandas                 |
+| 1550     | Questions                                  |
+| 1600     | Close                                      |
+
+## Agenda Day 2
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 1300     | Mount google drive onto colab, using pandas     |
+| 1350     | Break                                           |
+| 1400     | Indexing and subsetting, Data types and formats |
+| 1450     | Break                                           |
+| 1500     | Combining dataframes                            |
+| 1550     | Questions                                       |
+| 1600     | Close                                           |
+
+## Agenda Day 3
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 1300     | Indexing and subsetting, Data types and formats |
+| 1350     | Break                                           |
+| 1400     | Merging dataframes                              |
+| 1450     | Break                                           |
+| 1500     | Loops and functions                             |
+| 1550     | Questions                                       |
+| 1600     | Close                                           |
+
+## Agenda Day 4
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 1300     | Finishing off merging, loops and functions      |
+| 1350     | Break                                           |
+| 1400     | loops and functions cont., plotting with plotnine|
+| 1450     | Break                                           |
+| 1500     | Bringing it all together                        |
+| 1550     | Questions                                       |
+| 1600     | Close                                           |
+
+{% endif %}
+
+## What's your name and where do you come from? 
+
+- **Add your own entry below using the edit mode**
+
+## Further reading
+
+- Python notebook magic commands - https://ipython.readthedocs.io/en/stable/interactive/magics.html
+- Pandas documentation - https://pandas.pydata.org/docs/
+
+
+## Misc code snippets
+
+### Mounting google drive
+
+Mount the google drive to your colab notebook. Will need to run this every time you start a new notebook.
+
+```python=
+# Connect my Google Drive to Google Colab
+
+from google.colab import drive
+
+drive.mount ('/content/gdrive')
+```
+
+Change directory to the training folder - the path here can be discovered by clicking on the three dots by the directory in the tree on the left (click the files button if the tree isn't visible) and selecting copy path, then pasting that into the box with Ctrl-V.
+
+```python=
+%cd /content/gdrive/MyDrive/Colab Notebooks/arc_training/swd1a-python-2021-10
+```
+
+Check your working directory for the notebook
+```python=
+! pwd
+```
+
+Download data:
+
+```python=
+# But first we need to download it
+
+!wget -O data.zip https://arctraining.github.io/python-2021-04/data/portal-teachingdb-master.zip
+```
+
