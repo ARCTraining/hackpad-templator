@@ -1,0 +1,137 @@
+# {{ date }} <br> SWD1b Introduction to programming in R
+
+Welcome to the hack pad for SWD1b course from Research Computing at the University of Leeds!
+
+You can edit this document using [Markdown syntax](https://guides.github.com/features/mastering-markdown/).
+
+## Contents
+
+1. [Links to resource](#Links-to-resources)
+2. [Agenda Day](#Agenda-Day)
+4. [What's your name and where do you come from?](#What’s-your-name-and-where-do-you-come-from?)
+
+
+## Links to resources
+
+- **RStudio Cloud** - https://rstudio.cloud 
+- **Contact Research Computing** - https://bit.ly/arc-help
+- **Course notes** - https://arctraining.github.io/swd1b-r/
+- **Version control with git** - https://swcarpentry.github.io/git-novice/
+
+{% if morning %}
+## Agenda Day 1
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 0900     | Intro, using Rstudio.cloud, What is R?     |
+| 0950     | Break                                      |
+| 1000     | R basics, Project management in RStudio    |
+| 1050     | Break                                      |
+| 1100     | Finding help, Data Structures              |
+| 1150     | Questions                                  |
+| 1200     | Close                                      |
+
+## Agenda Day 2
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 0900     | Data structures (cont.), Data Types and coercion|
+| 0950     | Break                                           |
+| 1000     | Exploring data frames                           |
+| 1050     | Break                                           |
+| 1100     | Subsetting data                                 |
+| 1150     | Questions                                       |
+| 1200     | Close                                           |
+
+## Agenda Day 3
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 0900     | Subsetting data (cont.), Control flow           |
+| 0950     | Break                                           |
+| 1000     | Control flow (cont.), plotting with ggplot2     |
+| 1050     | Break                                           |
+| 1100     | Plotting with ggplot2 (cont.)                   |
+| 1150     | Questions                                       |
+| 1200     | Close                                           |
+
+## Agenda Day 4
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 0900     | Functions                                       |
+| 0950     | Break                                           |
+| 1000     | Dataframe manipulation with dplyr               |
+| 1050     | Break                                           |
+| 1100     | Tidyr and the Tidyverse                         |
+| 1150     | Questions                                       |
+| 1200     | Close                                           |
+{% else %}
+
+## Agenda Day 1
+
+| Time     | Agenda                                     |
+| -------- | ------------------------------------------ |
+| 1300     | Intro, using Rstudio.cloud, What is R?     |
+| 1350     | Break                                      |
+| 1400     | R basics, Project management in RStudio    |
+| 1450     | Break                                      |
+| 1500     | Finding help, Data Structures              |
+| 1550     | Questions                                  |
+| 1600     | Close                                      |
+
+## Agenda Day 2
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 1300     | Data structures (cont.), Data Types and coercion|
+| 1350     | Break                                           |
+| 1400     | Exploring data frames                           |
+| 1450     | Break                                           |
+| 1500     | Subsetting data                                 |
+| 1550     | Questions                                       |
+| 1600     | Close                                           |
+
+## Agenda Day 3
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 1300     | Subsetting data (cont.), Control flow           |
+| 1350     | Break                                           |
+| 1400     | Control flow (cont.), plotting with ggplot2     |
+| 1450     | Break                                           |
+| 1500     | Plotting with ggplot2 (cont.)                   |
+| 1550     | Questions                                       |
+| 1600     | Close                                           |
+
+## Agenda Day 4
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 1300     | Functions                                       |
+| 1350     | Break                                           |
+| 1400     | Dataframe manipulation with dplyr               |
+| 1450     | Break                                           |
+| 1500     | Tidyr and the Tidyverse                         |
+| 1550     | Questions                                       |
+| 1600     | Close                                           |
+
+{% endif %}
+
+## What's your name and where do you come from?
+- Edit the hackpad and add your name!
+
+## Getting the data
+
+To get the gapminder dataset for todays course you'll need to use the following command in your RStudio cloud console:
+
+```r=
+download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv", 
+              destfile = "data/gapminder_data.csv")
+```
+
+## Questions and Answers
+
+Feel free to post any questions you have here or in the Zoom chat. I'll do my best to answer them inline.
+
+**Increasing RStudio font size** 
+> Tools> Global Options> Appearance > Editor Font Size
