@@ -28,12 +28,14 @@ You can use this repository to automatically create a new Hackmd.io hackpad for 
 
 To create a new hackpad you need to create a branch with the format `<training-course-code>-yyyy-mm` for example for [HPC0](https://arc.leeds.ac.uk/training/courses/hpc0/) running in November 2021 you would create a branch `hpc0-2021-11`. You should then create a `config.yaml` file at the root of your repository containing values to be autofilled for the [template](#expected-config).
 
+**JinJa is picky over the file ending of the config file. Ensure it .yaml rather than .yml!**
+
 ```bash
 # example git command for creating a new branch
 $ git checkout -b hpc0-2021-11
 
 # create a config.yml in the repo root
-$ cat <<EOF > config.yml
+$ cat <<EOF > config.yaml
 date: 2021-11-22
 morning: true
 EOF
