@@ -38,6 +38,12 @@ date: 2021-11-22
 morning: true
 EOF
 
+# add stage config file for commit
+$ git add config.yml
+
+# commit changes
+$ git commit -m 'adding config file for workshop'
+
 # push branch back to github to trigger action
 $ git push -u origin hpc0-2021-11
 
