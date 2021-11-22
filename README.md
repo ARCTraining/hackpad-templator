@@ -31,6 +31,16 @@ To create a new hackpad you need to create a branch with the format `<training-c
 ```bash
 # example git command for creating a new branch
 $ git checkout -b hpc0-2021-11
+
+# create a config.yml in the repo root
+$ cat <<EOF > config.yml
+date: 2021-11-22
+morning: true
+EOF
+
+# push branch back to github to trigger action
+$ git push -u origin hpc0-2021-11
+
 ```
 
 **After the hackpad is created you will still need to configure the hackpads sharing settings and edit the url slug of the hackpad which can be done via the hackmd.io interface.**
