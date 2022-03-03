@@ -34,14 +34,14 @@ To create a new hackpad you need to create a branch with the format `<training-c
 # example git command for creating a new branch
 $ git checkout -b hpc0-2021-11
 
-# create a config.yml in the repo root
+# create a config.yaml in the repo root
 $ cat <<EOF > config.yaml
 date: 2021-11-22
 morning: true
 EOF
 
 # add stage config file for commit
-$ git add config.yml
+$ git add config.yaml
 
 # commit changes
 $ git commit -m 'adding config file for workshop'
@@ -55,14 +55,14 @@ $ git push -u origin hpc0-2021-11
 
 ## Expected `config`
 
-Each template expects a `config.yml` file to be committed within the branch to generate the hackpad. These just have to be simple
-yml documents that specify the variables that jinja2 will fill in.
+Each template expects a `config.yaml` file to be committed within the branch to generate the hackpad. These just have to be simple
+yaml documents that specify the variables that jinja2 will fill in.
 
 ### HPC0 & HPC1
 
-Expected yml file:
+Expected yaml file:
 
-```yml
+```yaml
 date: "2021-11" # specify the date to be included in the hackmd heading
 morning: True # specify if the session is morning or not to control generated agenda timings
 ```
