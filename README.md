@@ -66,3 +66,11 @@ Expected yaml file:
 date: "2021-11" # specify the date to be included in the hackmd heading
 morning: True # specify if the session is morning or not to control generated agenda timings
 ```
+
+### SWD6
+
+Expected yaml file:
+
+```yaml
+date: "2021-11" # specify the date to be included in the hackmd heading
+```
