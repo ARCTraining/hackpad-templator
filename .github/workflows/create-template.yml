@@ -64,9 +64,4 @@ jobs:
           notification-summary: Hackpad created for ${{ steps.split.outputs._0 }} at ${{ steps.hackmd-create.outputs.hackmd_link }} ! 🎉
           notification-color: 28a745
 
-      - name: logout to hackmd
-        shell: bash -l {0}
-        env:
-          HMD_API_ACCESS_TOKEN: ${{ secrets.HMD_API_ACCESS_TOKEN }}
-        run: |
-          hackmd-cli logout
+
