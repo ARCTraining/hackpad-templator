@@ -54,14 +54,14 @@ jobs:
         env:
           HMD_API_ACCESS_TOKEN: ${{ secrets.HMD_API_ACCESS_TOKEN }}
         run: |
-          echo "::set-output name=hackmd_link::$(cat ${{ steps.branch-name.outputs.current_branch }}.md | hackmd-cli notes create | grep -oP  'http.?://\S+')"
+          echo "::set-output name=hackmd_link::$(cat ${{ steps.branch-name.outputs.current_branch }}.md | hackmd-cli notes create --columns=ID --output=csv --no-header)"
 
       - name: Notify teams channel of created hackpad url
         uses: jdcargile/ms-teams-notification@v1.3
         with:
           github-token: ${{ github.token }} # this will use the runner's token.
           ms-teams-webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-          notification-summary: Hackpad created for ${{ steps.split.outputs._0 }} at ${{ steps.hackmd-create.outputs.hackmd_link }} ! 🎉
+          notification-summary: Hackpad created for ${{ steps.split.outputs._0 }} at https://hackmd.io/@research-computing-leeds/${{ steps.hackmd-create.outputs.hackmd_link }} ! 🎉
           notification-color: 28a745
 
 
