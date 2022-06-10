@@ -34,7 +34,7 @@ jobs:
         run: npm install -g @hackmd/hackmd-cli@1.2.0
 
       - name: generate templates via jinja2
-        uses: cuchi/jinja2-action@v1.2.0
+        uses: cuchi/jinja2-action@v2.0.2
         with:
           template: templates/${{ steps.split.outputs._0}}.md.j2
           output_file: ${{ steps.branch-name.outputs.current_branch }}.md
@@ -44,8 +44,7 @@ jobs:
       - name: login to hackmd
         shell: bash -l {0}
         env:
-          HMD_CLI_ID: ${{ secrets.HMD_CLI_ID }}
-          HMD_CLI_PASSWORD: ${{ secrets.HMD_CLI_PASSWORD }}
+          HMD_API_ACCESS_TOKEN: ${{ secrets.HMD_API_ACCESS_TOKEN }}
         run: |
           hackmd-cli login
 
