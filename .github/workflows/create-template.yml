@@ -31,10 +31,10 @@ jobs:
 
       - name: install hackmd-cli
         shell: bash -l {0}
-        run: npm install -g @hackmd/hackmd-cli@1.2.0
+        run: npm install -g @hackmd/hackmd-cli@2.0.2
 
       - name: generate templates via jinja2
-        uses: cuchi/jinja2-action@v2.0.2
+        uses: cuchi/jinja2-action@v1.2.0
         with:
           template: templates/${{ steps.split.outputs._0}}.md.j2
           output_file: ${{ steps.branch-name.outputs.current_branch }}.md
