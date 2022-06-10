@@ -51,6 +51,8 @@ jobs:
       - name: export markdown file to hackmd
         shell: bash -l {0}
         id: hackmd-create
+        env:
+          HMD_API_ACCESS_TOKEN: ${{ secrets.HMD_API_ACCESS_TOKEN }}
         run: |
           echo "::set-output name=hackmd_link::$(cat ${{ steps.branch-name.outputs.current_branch }}.md | hackmd-cli notes create | grep -oP  'http.?://\S+')"
 
