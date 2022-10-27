@@ -1,1 +1,4 @@
+# a generic config.yaml file
+# consult https://github.com/ARCTraining/hackpad-templator#expected-config for details of expected config files
 date: 2022-11
+# morning: true
