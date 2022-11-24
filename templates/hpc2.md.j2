@@ -1,0 +1,100 @@
+---
+tags: hpc2, teaching
+---
+
+# {{ date }} <br> HPC2: Installing and Managing Applications on the HPC
+
+Welcome to the hack pad for HPC2 course from Research Computing at the University of Leeds!
+
+You can edit this document using [Markdown syntax](https://guides.github.com/features/mastering-markdown/).
+
+## Contents
+
+1. [Links to resource](#Links-to-resources)
+2. [Further reading](#Further-reading)
+3. [Pre workshop prep](#Pre-workshop-prep)
+4. [Agenda](#Agenda)
+5. [What's your name and where do you come from?](#What’s-your-name-and-where-do-you-come-from)
+
+## Links to resources
+
+- **Contact Research Computing** - https://bit.ly/arc-help
+- **Course website** - https://arctraining.github.io/hpc2-software/welcome.html
+
+## Pre workshop prep
+
+This course requires users to have ARC4 accounts and to be familiar with how to log on and connect to HPC systems.
+
+### Required setup steps
+
+- Users register for HPC accounts using the [HPC account request form](https://leeds.service-now.com/it?id=sc_cat_item&sys_id=4c002dd70f235f00a82247ece1050ebc)
+- Set up personal computer for connecting to HPC (HPC account required)
+    - An overview can be found [here (including screenshots)](https://hackmd.io/xBKb6Az3QmewUsVF3ab2qg#Pre-workshop-prep)
+    - For Windows, downloading MobaXTerm and configuring a session with ssh Gateway settings
+    - For MacOS/Linux, creating a `~/.ssh/config` file with ProxyJump rule to `remote-access.leeds.ac.uk`
+
+**You are expected to have experience of connecting to ARC4 before this tutorial, as no time will be made available for walking through connecting to HPC**
+
+
+## Agenda
+
+{% if morning %}
+
+### Part 1
+
+| Time     | Agenda                          |
+| -------- | ------------------------------- |
+| 0900     | Introduction, Theory            |
+| 1000     | Break                           |
+| 1010     | Conda                           |
+| 1050     | Break                           |
+| 1100     | Autotools/CMake                 |
+| 1150     | Wrap up and questions           |
+| 1200     | End                             |
+
+### Part 2
+
+
+| Time     | Agenda                          |
+| -------- | ------------------------------- |
+| 0900     | Welcome back and homework       |
+| 0930     | Containers                      |
+| 0950     | Break                           |
+| 1000     | Containers (cont.)              |
+| 1050     | Break and                       |
+| 1100     | Spack                           |
+| 1150     | Wrap up and questions           |
+| 1200     | End                             |
+
+{% else %}
+    
+### Part 1
+
+| Time     | Agenda                          |
+| -------- | ------------------------------- |
+| 1300     | Introduction, Theory            |
+| 1400     | Break                           |
+| 1410     | Conda                           |
+| 1450     | Break                           |
+| 1500     | Autotools/CMake                 |
+| 1550     | Wrap up and questions           |
+| 1600     | End                             |
+
+### Part 2
+
+
+| Time     | Agenda                          |
+| -------- | ------------------------------- |
+| 1300     | Welcome back and homework       |
+| 1330     | Containers                      |
+| 1350     | Break                           |
+| 1400     | Containers (cont.)              |
+| 1450     | Break and                       |
+| 1500     | Spack                           |
+| 1550     | Wrap up and questions           |
+| 1600     | End                             |
+
+{% endif %}
+
+
+## What's your name and where do you come from?
