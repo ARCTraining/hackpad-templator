@@ -49,9 +49,60 @@ To help get you up to speed please do the following prep:
         
         **You're now all set for SWD2!**
 
+{% if type == "online" %}
+    {% if morning %}
+    ## Agenda Day 1
 
-{% if morning %}
-## Agenda Day 1
+    | Time     | Agenda                                     |
+    | -------- | ------------------------------------------ |
+    | 0900     | Intro, setup, what is version control?     |
+    | 0950     | Break                                      |
+    | 1000     | Creating a repository, Tracking changes    |
+    | 1050     | Break and Answers                          |
+    | 1100     | Exploring history, GitHub, collaboration   |
+    | 1150     | Questions                                  |
+    | 1200     | Close                                      |
+
+    ## Agenda Day 2
+
+    | Time     | Agenda                                     |
+    | -------- | ------------------------------------------ |
+    | 0900     | Intro, collaborating (cont.), Conflicts    |
+    | 0950     | Questions and break                        |
+    | 1000     | Conflicts and Branching                    |
+    | 1050     | Questions and break                        |
+    | 1100     | Open Science, Licensing                    |
+    | 1150     | Wrap up and questions                      |
+    | 1200     | Close                                      |
+
+    {% else %}
+    ## Agenda Day 1
+
+    | Time     | Agenda                                     |
+    | -------- | ------------------------------------------ |
+    | 1300     | Intro, setup, what is version control?     |
+    | 1350     | Break                                      |
+    | 1400     | Creating a repository, Tracking changes    |
+    | 1450     | Break and Answers                          |
+    | 1500     | Exploring history, GitHub, collaboration   |
+    | 1550     | Questions                                  |
+    | 1600     | Close                                      |
+
+    ## Agenda Day 2
+
+    | Time     | Agenda                                     |
+    | -------- | ------------------------------------------ |
+    | 1300     | Intro, collaborating (cont.), Conflicts    |
+    | 1350     | Questions and break                        |
+    | 1400     | Conflicts and Branching                    |
+    | 1450     | Questions and break                        |
+    | 1500     | Open Science, Licensing                    |
+    | 1550     | Wrap up and questions                      |
+    | 1600     | Close                                      |
+    {% endif %}
+{% else %}
+
+## Agenda
 
 | Time     | Agenda                                     |
 | -------- | ------------------------------------------ |
@@ -61,37 +112,7 @@ To help get you up to speed please do the following prep:
 | 1050     | Break and Answers                          |
 | 1100     | Exploring history, GitHub, collaboration   |
 | 1150     | Questions                                  |
-| 1200     | Close                                      |
-
-## Agenda Day 2
-
-| Time     | Agenda                                     |
-| -------- | ------------------------------------------ |
-| 0900     | Intro, collaborating (cont.), Conflicts    |
-| 0950     | Questions and break                        |
-| 1000     | Conflicts and Branching                    |
-| 1050     | Questions and break                        |
-| 1100     | Open Science, Licensing                    |
-| 1150     | Wrap up and questions                      |
-| 1200     | Close                                      |
-
-{% else %}
-## Agenda Day 1
-
-| Time     | Agenda                                     |
-| -------- | ------------------------------------------ |
-| 1300     | Intro, setup, what is version control?     |
-| 1350     | Break                                      |
-| 1400     | Creating a repository, Tracking changes    |
-| 1450     | Break and Answers                          |
-| 1500     | Exploring history, GitHub, collaboration   |
-| 1550     | Questions                                  |
-| 1600     | Close                                      |
-
-## Agenda Day 2
-
-| Time     | Agenda                                     |
-| -------- | ------------------------------------------ |
+| 1200     | Lunch                                      |
 | 1300     | Intro, collaborating (cont.), Conflicts    |
 | 1350     | Questions and break                        |
 | 1400     | Conflicts and Branching                    |
@@ -99,7 +120,9 @@ To help get you up to speed please do the following prep:
 | 1500     | Open Science, Licensing                    |
 | 1550     | Wrap up and questions                      |
 | 1600     | Close                                      |
+
 {% endif %}
+
 
 ## What's your name and where do you come from?
 - Edit the hackpad and add your name!
