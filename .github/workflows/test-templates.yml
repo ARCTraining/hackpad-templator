@@ -33,8 +33,8 @@ jobs:
       - name: Test generating templates for online, morning
         uses: cuchi/jinja2-action@v1.2.0
         with:
-          template: templates/${{ matrix.templates }}.md.j2
-          output_file: ${{ matrix.templates }}.md
+          template: templates/${{ matrix.templates }}
+          output_file: ${{ matrix.templates }}.test
           variables: |
             type=online
             morning=true
