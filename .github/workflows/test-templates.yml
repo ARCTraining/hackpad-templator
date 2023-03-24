@@ -1,0 +1,57 @@
+# these tests do not check the outputted markdown
+# they just test the jinja process does not generate any errors
+
+name: Test jinja templates
+
+on:
+  push:
+    pull_request:
+      branches: 
+        - ["main"]
+
+jobs:
+  create-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - id: set-matrix
+        run: echo "::set-output name=matrix::$(ls templates/*.md.j2 | jq -R -s -c 'split("\n")[:-1]')"
+  
+  test-templates:
+    needs: create-matrix
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+            templates: ${{ fromJson(needs.create-matrix.outputs.matrix) }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Test generating templates for online, morning
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: ${{ matrix.templates }}
+          output_file: test-online-morn.out
+          variables: |
+            type=online
+            morning=true
+            date="test"
+      - name: Test generating templates for online, afternoon
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: ${{ matrix.templates }}
+          output_file: test-online-aft.out
+          variables: |
+            type=online
+            date="test"
+      - name: Test generating templates for in person
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          template: ${{ matrix.templates }}
+          output_file: test-in-person.out
+          variables: |
+            date="test"
+
