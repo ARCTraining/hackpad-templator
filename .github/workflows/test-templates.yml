@@ -5,7 +5,8 @@ name: Test jinja templates
 
 on:
   pull_request:
-      - "main"
+    branches: 
+      - ["main"]
 
 jobs:
   create-matrix:
