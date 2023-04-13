@@ -18,7 +18,10 @@ You can edit this document using [Markdown syntax](https://guides.github.com/fea
 - **Course notes** - https://arctraining.github.io/swd1b-r/
 - **Version control with git** - https://swcarpentry.github.io/git-novice/
 
-{% if morning %}
+{% if type == "online" %}
+
+    {% if morning %}
+
 ## Agenda Day 1
 | Time     | Agenda                                     |
 | -------- | ------------------------------------------ |
@@ -116,6 +119,39 @@ You can edit this document using [Markdown syntax](https://guides.github.com/fea
 | 1600     | Close                                           |
 
 {% endif %}
+
+{% else %}
+
+## Agenda Day 1
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 1000     | Intro, using Rstudio.cloud, What is R?          |
+| 1050     | Break                                           |
+| 1100     | R basics, Data structures                       |
+| 1200     | Lunch                                           |
+| 1300     | Data structures (cont.), Data Types and coercion|
+| 1400     | Exploring data frames                           |
+| 1430     | Break                                           |
+| 1440     | Subsetting data                                 |
+| 1600     | Close                                           |
+
+## Agenda Day 2
+
+| Time     | Agenda                                          |
+| -------- | ----------------------------------------------- |
+| 1000     | Subsetting data (cont.), Control flow           |
+| 1050     | Break                                           |
+| 1100     | Control flow (cont.), plotting with ggplot2     |
+| 1200     | Lunch                                           |
+| 1300     | Plotting with ggplot2 (cont.), Functions        |
+| 1400     | Dataframe manipulation with dplyr               |
+| 1430     | Break                                           |
+| 1440     | Tidyr and the Tidyverse                         |
+| 1600     | Close                                           |
+
+{% endif %}
+
 
 ## What's your name and where do you come from?
 - Edit the hackpad and add your name!
