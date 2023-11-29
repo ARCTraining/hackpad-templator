@@ -74,3 +74,7 @@ Expected yaml file:
 ```yaml
 date: "2021-11" # specify the date to be included in the hackmd heading
 ```
+
+## Changing files in this repository
+
+If changing the template where you don't want to test that it deploys correctly, it is important to name the branch to something starting "dev" e.g. "dev-hpc0-user-0". This is because of the way the GitHub actions are configured. Failure to use a name starting with "dev" will result in it trying to deploy, so normal branch naming rules apply, and it will fail if it's not an appropriate name. Renaming the branch does not seem to resolve this, so take care to name the branch correctly first time.
