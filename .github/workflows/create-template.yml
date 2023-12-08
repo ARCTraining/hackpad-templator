@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Get branch name
         id: branch-name
-        uses: tj-actions/branch-names@v5
+        uses: tj-actions/branch-names@v8
 
       - name: set up split function
         uses: rishabhgupta/split-by@v1
