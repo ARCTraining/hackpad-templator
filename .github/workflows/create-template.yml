@@ -7,10 +7,10 @@ on:
       - "main"
       - "master"
       - "dev*"
-      - "dependabot/*"
 
 jobs:
   build:
+    if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Get branch name
